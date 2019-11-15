@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import banner from "../assets/img/banner.png";
+// import "./NavBar.css";
+import crypt from "../assets/font/postcryp.ttf";
 
 function NavBar() {
   var navBarButton = {
+    fontFamily: crypt,
     margin: "0 50px 0 50px",
     display: "inline-block",
-    backgroundColor: "#70f25e",
-    border: "solid 2px #1f7a2b",
+    backgroundColor: "#31ec17",
+    border: "solid 2px #d217ec",
   };
   var navBar = {
 

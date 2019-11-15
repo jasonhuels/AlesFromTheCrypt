@@ -31,6 +31,17 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.ttf$/,
+                use: [
+                    {
+                        loader: 'ttf-loader',
+                        options: {
+                            name: './font/[hash].[ext]',
+                        },
+                    },
+                ]
+            },
+            {
                 test: /\.jsx?$/,
                 enforce: "pre",
                 loader: "eslint-loader",
