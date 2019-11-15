@@ -4,6 +4,7 @@ import Home from "./Home";
 import BeerList from "./BeerList";
 import NewBeerForm from "./NewBeerForm";
 import { Switch, Route } from "react-router-dom";
+import Error404 from "./Error404";
 
 function App() {
   return (
@@ -11,10 +12,11 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path='/' component={Home} />
-        <div className="row">
+
           <Route path='/beers' component={BeerList} />
           <Route path='/newbeerform' component={NewBeerForm} />
-        </div>
+          <Route component={Error404} />
+
       </Switch>
     </div>
   );

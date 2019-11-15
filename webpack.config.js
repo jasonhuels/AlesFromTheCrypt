@@ -18,7 +18,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
     },
     devtool: '#source-map',
 
@@ -30,6 +30,10 @@ module.exports = {
 
     module: {
         rules: [
+            {
+                test: /\.css$/i,
+                loader: 'style-loader!css-loader'
+            },
             {
                 test: /\.ttf$/,
                 use: [
