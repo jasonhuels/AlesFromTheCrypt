@@ -36,7 +36,7 @@ module.exports = {
                     {
                         loader: 'ttf-loader',
                         options: {
-                            name: './font/[hash].[ext]',
+                            name: './src/assets/font/[hash].[ext]',
                         },
                     },
                 ]

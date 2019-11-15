@@ -7,11 +7,13 @@ import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <NavBar />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/beers' component={BeerList} />
+        <div className="row">
+          <Route path='/beers' component={BeerList} />
+        </div>
         <Route path='/newbeer' component={NewBeerForm} />
       </Switch>
     </div>
