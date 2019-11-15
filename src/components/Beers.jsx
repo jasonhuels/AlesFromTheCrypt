@@ -26,9 +26,7 @@ function Beer(props) {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-
-    // margin: "1% 1%",
-    //display: "flex",
+    margin: "10px",
   };
   return (
 
