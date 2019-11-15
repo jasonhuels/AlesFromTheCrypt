@@ -73,7 +73,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'template.ejs',
             appMountId: 'react-app-root',
-            title: 'Epicodus Yearbook',
+            title: 'Ales From the Crypt',
             filename: resolve(__dirname, "build", "index.html"),
         }),
     ]
