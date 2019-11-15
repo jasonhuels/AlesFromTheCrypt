@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import crypt from "../assets/font/postcryp.ttf";
+import "./NavBar.css";
 
 function Beer(props) {
   var imageStyle = {
@@ -14,7 +14,7 @@ function Beer(props) {
     width: "300px",
     height: "500px",
     textAlign: "center",
-    fontFamily: crypt,
+    fontFamily: "crypt",
     backgroundColor: "#31ec17",
     margin: "5px",
     border: "solid 2px #d217ec"
@@ -33,7 +33,7 @@ function Beer(props) {
     <div style={contentStyle} className="">
       <div style={galleryStyle} className="">
         <div style={beerStyle} className="col s3 card">
-          <h3 style={{fontFamily: crypt}}>{props.name}</h3>
+          <h3 >{props.name}</h3>
           <img style={imageStyle} src={props.photo} />
           <h5>{props.style} {props.abv} %</h5>
           <p>{props.description}</p>

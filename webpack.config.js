@@ -29,7 +29,27 @@ module.exports = {
     },
 
     module: {
+        
         rules: [
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /^(?!.*\.generated\.ttf$).*\.ttf$/,
+                use: ['css-loader', 'fontface-loader'],
+            }, {
+                test: /\.generated.(ttf|eot|woff|woff2)$/,
+                use: ['file-loader'],
+            },
             {
                 test: /\.css$/i,
                 loader: 'style-loader!css-loader'
@@ -56,7 +76,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|gif|jp(e*)g|svg)$/,
+                test: /\.(png|gif|jp(e*)g|svg|woff)$/,
                 use: {
                     loader: 'url-loader',
                     options: {

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fontface-loader": "0.0.8",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -29,7 +30,7 @@
     "eslint": "^4.13.1",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-react": "^7.10.0",
-    "file-loader": "^1.1.6",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^2.29.0",
     "react-hot-loader": "^3.0.0-beta.7",
     "ttf-loader": "^1.0.2",

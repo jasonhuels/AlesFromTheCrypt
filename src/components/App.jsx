@@ -13,9 +13,9 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
 
-          <Route path='/beers' component={BeerList} />
-          <Route path='/newbeerform' component={NewBeerForm} />
-          <Route component={Error404} />
+        <Route path='/beers' component={BeerList} />
+        <Route path='/newbeerform' component={NewBeerForm} />
+        <Route component={Error404} />
 
       </Switch>
     </div>
