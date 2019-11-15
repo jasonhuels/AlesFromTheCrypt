@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./NavBar.css";
 
 function Beer(props) {
   var imageStyle = {
@@ -14,7 +13,7 @@ function Beer(props) {
     width: "300px",
     height: "500px",
     textAlign: "center",
-    fontFamily: "crypt",
+    fontFamily: "'Creepster', cursive",
     backgroundColor: "#31ec17",
     margin: "5px",
     border: "solid 2px #d217ec"
@@ -31,12 +30,13 @@ function Beer(props) {
   return (
 
     <div style={contentStyle} className="">
+
       <div style={galleryStyle} className="">
         <div style={beerStyle} className="col s3 card">
           <h3 >{props.name}</h3>
           <img style={imageStyle} src={props.photo} />
           <h5>{props.style} {props.abv} %</h5>
-          <p>{props.description}</p>
+          <h5>{props.description}</h5>
         </div>
       </div>
     </div>

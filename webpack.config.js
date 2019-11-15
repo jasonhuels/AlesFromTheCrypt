@@ -32,17 +32,18 @@ module.exports = {
         
         rules: [
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
+                            outputPath: './assets/font/',
+                            name: '[name][hash].[ext]',
+                        },
+                    },
+                ],
             },
+
             {
                 test: /^(?!.*\.generated\.ttf$).*\.ttf$/,
                 use: ['css-loader', 'fontface-loader'],
