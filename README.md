@@ -21,7 +21,7 @@ _A web application for a bar to track the kegs on hand, including the name, bran
 * _Navigate to localhost:8080 in the browser of your choice_
 
 
-![Diagram](IMAGE GOES HERE)
+![Diagram](./TapRoom.jpg)
 
 ## Known Bugs
 
