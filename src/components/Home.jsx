@@ -10,6 +10,7 @@ function Home() {
     marginRight: "auto",
     display: "block",
     borderRadius: "20%",
+    border: "solid 2px #d217ec"
   };
   return (
     <div>

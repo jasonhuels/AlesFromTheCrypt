@@ -13,6 +13,7 @@ var masterBeerList = [
     photo: ipa,
     style: "IPA",
     abv: "8",
+    price: "4.50",
     description: "A beer so bitter it will feel like your taste buds are being impaled.",
   },
   {
@@ -20,6 +21,7 @@ var masterBeerList = [
     photo: dark,
     style: "Stout",
     abv: "8.5",
+    price: "4.50",
     description: "Hello darkness, my old friend...",
   },
   {
@@ -27,6 +29,7 @@ var masterBeerList = [
     photo: red,
     style: "Red Ale",
     abv: "6.5",
+    price: "4.00",
     description: "All work and no beer makes Jack a dull boy.",
   },
   {
@@ -34,21 +37,24 @@ var masterBeerList = [
     photo: sour,
     style: "Sour Ale",
     abv: "4.8",
-    description: "sour",
+    price: "6.00",
+    description: "Painfully sour",
   },
   {
     name: "Hurt Lager",
     photo: lager,
     style: "Lager",
     abv: "4.5",
-    description: "weak",
+    price: "2.50",
+    description: "Lagers are boring, this one is no different.",
   },
   {
     name: "Torture Porter",
     photo: porter,
     style: "Porter",
     abv: "6.5",
-    description: "sweet",
+    price: "4.00",
+    description: "Sickening sweet",
   },
 ];
 
@@ -61,6 +67,7 @@ function BeerList() {
           quote={beer.quote}
           style={beer.style}
           abv={beer.abv}
+          price={beer.price}
           description={beer.description}
           key={index} />
       )}

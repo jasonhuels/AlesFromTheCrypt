@@ -16,6 +16,7 @@ function Beer(props) {
     fontFamily: "'Creepster', cursive",
     backgroundColor: "#31ec17",
     margin: "5px",
+    padding: "0",
     border: "solid 2px #d217ec"
   };
   var galleryStyle = {
@@ -36,6 +37,7 @@ function Beer(props) {
           <h3 >{props.name}</h3>
           <img style={imageStyle} src={props.photo} />
           <h5>{props.style} {props.abv} %</h5>
+          <h5>${props.price} / pint</h5>
           <h5>{props.description}</h5>
         </div>
       </div>
@@ -48,6 +50,7 @@ Beer.propTypes = {
   photo: PropTypes.string,
   style: PropTypes.string,
   abv: PropTypes.string,
+  price: PropTypes.string,
   description: PropTypes.string,
 };
 
