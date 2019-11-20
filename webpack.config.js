@@ -31,41 +31,7 @@ module.exports = {
     module: {
         
         rules: [
-            {
-                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            outputPath: './assets/font/',
-                            name: '[name][hash].[ext]',
-                        },
-                    },
-                ],
-            },
 
-            {
-                test: /^(?!.*\.generated\.ttf$).*\.ttf$/,
-                use: ['css-loader', 'fontface-loader'],
-            }, {
-                test: /\.generated.(ttf|eot|woff|woff2)$/,
-                use: ['file-loader'],
-            },
-            {
-                test: /\.css$/i,
-                loader: 'style-loader!css-loader'
-            },
-            {
-                test: /\.ttf$/,
-                use: [
-                    {
-                        loader: 'ttf-loader',
-                        options: {
-                            name: './font/[hash].[ext]',
-                        },
-                    },
-                ]
-            },
             {
                 test: /\.jsx?$/,
                 enforce: "pre",
