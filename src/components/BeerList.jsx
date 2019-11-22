@@ -48,7 +48,8 @@ class BeerList extends React.Component {
             key={index} 
             id={beer.id}
             currentRouterPath={this.props.currentRouterPath}
-            onSubtractPint={this.props.onSubtractPint}/>
+            onSubtractPint={this.props.onSubtractPint}
+            onEditBeer={props.onEditBeer}/>
         )}
       </div>
     );

@@ -8,7 +8,8 @@ function Employee(props){
       <BeerList
         masterBeerList={props.masterBeerList} 
         currentRouterPath={props.currentRouterPath} 
-        onSubtractPint={props.onSubtractPint} />}/>
+        onSubtractPint={props.onSubtractPint}
+        onEditBeer={props.onEditBeer} />}/>
     </div>
   );
 }
