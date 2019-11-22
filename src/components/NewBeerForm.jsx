@@ -16,7 +16,7 @@ function NewBeerForm(props) {
 
   function handleSubmission(event) {
     event.preventDefault();
-    props.onAddNewBeer({ name: name.value, photoPath: photoPath.value, type: type.value, abv: abv.value, price: price.value, description: description.value, id: v4() });
+    props.onAddNewBeer({ name: name.value, photoPath: photoPath.value, type: type.value, abv: abv.value, price: price.value, description: description.value, pintsLeft: 124, id: v4() });
     name.value = "";
     photoPath.value = "";
     type.value = "";

@@ -13,6 +13,7 @@ let masterBeerList = [
     abv: "8",
     price: "4.50",
     description: "A beer so bitter it will feel like your taste buds are being impaled.",
+    pintsLeft: 124
   },
   {
     name: "Ale From the Black Lagoon",
@@ -21,6 +22,7 @@ let masterBeerList = [
     abv: "8.5",
     price: "4.50",
     description: "Hello darkness, my old friend...",
+    pintsLeft: 124
   },
   {
     name: "redruM Red Ale",
@@ -29,6 +31,7 @@ let masterBeerList = [
     abv: "6.5",
     price: "4.00",
     description: "All work and no beer makes Jack a dull boy.",
+    pintsLeft: 124
   },
   {
     name: "Sour of the Wolf",
@@ -37,6 +40,7 @@ let masterBeerList = [
     abv: "4.8",
     price: "6.00",
     description: "Painfully sour",
+    pintsLeft: 124
   },
   {
     name: "Hurt Lager",
@@ -45,6 +49,7 @@ let masterBeerList = [
     abv: "4.5",
     price: "2.50",
     description: "Lagers are boring, this one is no different.",
+    pintsLeft: 124
   },
   {
     name: "Torture Porter",
@@ -53,6 +58,7 @@ let masterBeerList = [
     abv: "6.5",
     price: "4.00",
     description: "Sickening sweet",
+    pintsLeft: 124
   },
 ];
 

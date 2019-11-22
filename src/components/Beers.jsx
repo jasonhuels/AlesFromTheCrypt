@@ -11,7 +11,7 @@ function Beer(props) {
   };
   var beerStyle = {
     width: "300px",
-    height: "500px",
+    height: "600px",
     textAlign: "center",
     fontFamily: "'Creepster', cursive",
     backgroundColor: "#31ec17",
@@ -29,6 +29,8 @@ function Beer(props) {
     margin: "10px",
   };
 
+  let subButton = props.currentRouterPath === "/employee" ? <button onClick={() => { console.log("click works") }}>Subtract Pint</button> : "";
+  let pintsLeft = props.currentRouterPath === "/employee" ? <p>Pints Left:{props.pintsLeft}</p> : "";
   const beerInfo = <div  className="">
     <div style={galleryStyle} className="">
       <div style={beerStyle} className="col s3 card">
@@ -37,14 +39,18 @@ function Beer(props) {
         <h5>{props.style} {props.abv} %</h5>
         <h5>${props.price} / pint</h5>
         <h5>{props.description}</h5>
+        {pintsLeft}
+        {subButton}
       </div>
     </div>
   </div>;
 
   if (props.currentRouterPath === "/employee") {
+    subButton = <button onClick={() => { console.log("click works") }}>Subtract Pint</button>;
     return (
-      <div style={contentStyle} onClick={() => {console.log("click works")}}>
-        {beerInfo}
+      <div style={contentStyle} >
+        {beerInfo} <br/>
+        
       </div>
     );
   } else {
