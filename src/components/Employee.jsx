@@ -5,7 +5,6 @@ import BeerList from "./BeerList";
 function Employee(props){
   return(
     <div>
-      <h1>Employee Portal</h1>
       <BeerList
         masterBeerList={props.masterBeerList} 
         currentRouterPath={props.currentRouterPath} 

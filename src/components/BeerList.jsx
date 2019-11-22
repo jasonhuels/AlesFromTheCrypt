@@ -17,15 +17,25 @@ class BeerList extends React.Component {
   render() {
     let sortButtonBar = {
       display: "flex",
-      justifyContent: "center"
+      justifyContent: "center",
+      paddingTop: "20px"
+    };
+
+    let sortButton = {
+      color: "lime",
+      fontSize: "25px",
+      fontFamily: "'Creepster', cursive",
+      backgroundColor: "black",
+      border: "solid #d217ec 2px"
     };
 
     return (
       <div>
+          <h5 style={{ color: "#d217ec", textAlign: "center"}}>Sort by:</h5>
         <div style={sortButtonBar}>
-          <button onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.price - b.price))}}>Ascending Price</button>
-          <button onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => b.price - a.price)) }}>Descending Price</button>
-          <button onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft)) }}>Pints Remaining</button>
+          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.price - b.price))}}>Ascending Price</button>
+          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => b.price - a.price)) }}>Descending Price</button>
+          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft)) }}>Pints Remaining</button>
         </div><br/>
         {this.props.masterBeerList.map((beer, index) =>
           <Beer name={beer.name}
