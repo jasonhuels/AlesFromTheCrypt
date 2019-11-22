@@ -20,7 +20,7 @@ function Beer(props) {
     border: "solid 2px #d217ec"
   };
   var galleryStyle = {
-    // margin: "0 auto 0 auto",
+    
   };
   var contentStyle = {
     display: "inline-flex",
