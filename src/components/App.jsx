@@ -29,6 +29,10 @@ class App extends React.Component {
     for(let i=0; i<temp.length; i++) {
       if(temp[i].id === id){
         temp[i].pintsLeft--;
+        if(temp[i].pintsLeft <= 0) {
+          temp.splice(i, 1);
+        }
+        break;
       }
     }
 

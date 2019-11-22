@@ -24,7 +24,7 @@ let masterBeerList = [
     abv: "8.5",
     price: "4.50",
     description: "Hello darkness, my old friend...",
-    pintsLeft: 124,
+    pintsLeft: 4,
     id: v4()
   },
   {
