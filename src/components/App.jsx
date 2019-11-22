@@ -27,12 +27,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        {console.log(this.state.masterBeerList)}
         <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path="/beers" render={() => <BeerList masterBeerList={this.state.masterBeerList} />} />
-          <Route path="/employee" render={() => <Employee masterBeerList={this.state.masterBeerList} />} />
+          <Route path="/employee" render={(props) => <Employee masterBeerList={this.state.masterBeerList} currentRouterPath={props.location.pathname} />} />
           <Route path="/newbeer" render={() => <NewBeerForm onAddNewBeer={this.handleAddNewBeer} />} />
           <Route component={Error404} />
   
