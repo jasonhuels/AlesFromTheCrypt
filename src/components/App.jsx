@@ -6,20 +6,29 @@ import NewBeerForm from "./NewBeerForm";
 import { Switch, Route } from "react-router-dom";
 import Error404 from "./Error404";
 
-function App() {
-  return (
-    <div className="container">
-      <NavBar />
-      <Switch>
-        <Route exact path='/' component={Home} />
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
 
-        <Route path='/beers' component={BeerList} />
-        <Route path='/newbeerform' component={NewBeerForm} />
-        <Route component={Error404} />
+    };
+  }
 
-      </Switch>
-    </div>
-  );
+  render() {
+    return (
+      <div className="container">
+        <NavBar />
+        <Switch>
+          <Route exact path='/' component={Home} />
+  
+          <Route path='/beers' component={BeerList} />
+          <Route path='/newbeerform' component={NewBeerForm} />
+          <Route component={Error404} />
+  
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
