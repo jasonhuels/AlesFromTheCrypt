@@ -6,6 +6,7 @@ import NewBeerForm from "./NewBeerForm";
 import { Switch, Route } from "react-router-dom";
 import Error404 from "./Error404";
 import MasterBeerList from "./MasterBeerList";
+import Employee from "./Employee";
 
 class App extends React.Component {
   constructor(props){
@@ -31,7 +32,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path="/beers" render={() => <BeerList masterBeerList={this.state.masterBeerList} />} />
-          <Route path="/newbeerform" render={() => <NewBeerForm onAddNewBeer={this.handleAddNewBeer} />} />
+          <Route path="/employee" render={() => <Employee masterBeerList={this.state.masterBeerList} />} />
+          <Route path="/newbeer" render={() => <NewBeerForm onAddNewBeer={this.handleAddNewBeer} />} />
           <Route component={Error404} />
   
         </Switch>

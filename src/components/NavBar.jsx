@@ -47,7 +47,8 @@ function NavBar() {
         <div className="col s12">
           <button className="btn" style={navBarButton}><Link style={navLink} to="/">Home</Link></button>
           <button className="btn" style={navBarButton}><Link style={navLink} to="/beers">Beers</Link></button>
-          <button className="btn" style={navBarButton}><Link style={navLink} to="/newbeerform">Add a Beer</Link></button>
+          <button className="btn" style={navBarButton}><Link style={navLink} to="/employee">Employee</Link></button>
+          <button className="btn" style={navBarButton}><Link style={navLink} to="/newbeer">Add a Beer</Link></button>
         </div>
       </div>
     </div>
