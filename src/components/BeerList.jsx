@@ -12,7 +12,8 @@ function BeerList(props) {
           abv={beer.abv}
           price={beer.price}
           description={beer.description}
-          key={index} />
+          key={index} 
+          currentRouterPath={props.currentRouterPath}/>
       )}
     </div>
   );

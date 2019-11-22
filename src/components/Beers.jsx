@@ -28,21 +28,32 @@ function Beer(props) {
     justifyContent: "center",
     margin: "10px",
   };
-  return (
 
-    <div style={contentStyle} className="">
-
-      <div style={galleryStyle} className="">
-        <div style={beerStyle} className="col s3 card">
-          <h3 >{props.name}</h3>
-          <img style={imageStyle} src={props.photo} />
-          <h5>{props.style} {props.abv} %</h5>
-          <h5>${props.price} / pint</h5>
-          <h5>{props.description}</h5>
-        </div>
+  const beerInfo = <div  className="">
+    <div style={galleryStyle} className="">
+      <div style={beerStyle} className="col s3 card">
+        <h3 >{props.name}</h3>
+        <img style={imageStyle} src={props.photo} />
+        <h5>{props.style} {props.abv} %</h5>
+        <h5>${props.price} / pint</h5>
+        <h5>{props.description}</h5>
       </div>
     </div>
-  );
+  </div>;
+
+  if (props.currentRouterPath === "/employee") {
+    return (
+      <div style={contentStyle} onClick={() => {console.log("click works")}}>
+        {beerInfo}
+      </div>
+    );
+  } else {
+    return (
+      <div style={contentStyle}>
+        {beerInfo}
+      </div>
+    );
+  }
 }
 
 Beer.propTypes = {

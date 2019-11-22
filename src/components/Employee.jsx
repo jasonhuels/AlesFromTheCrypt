@@ -8,7 +8,8 @@ function Employee(props){
     <div>
       <h1>Employee Portal</h1>
       <BeerList
-        masterBeerList={props.masterBeerList} />
+        masterBeerList={props.masterBeerList} 
+        currentRouterPath={props.currentRouterPath} />
     </div>
   );
 }
