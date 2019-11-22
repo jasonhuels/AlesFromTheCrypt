@@ -7,6 +7,7 @@ function NewBeerForm(props) {
   let photoPath = null;
   let type = null;
   let abv = null;
+  let price = null;
   let description = null;
 
   var inputStyle = {
@@ -15,11 +16,12 @@ function NewBeerForm(props) {
 
   function handleSubmission(event) {
     event.preventDefault();
-    props.onAddNewBeer({ name: name.value, photoPath: photoPath.value, type: type.value, abv: abv.value, description: description.value, id: v4() });
+    props.onAddNewBeer({ name: name.value, photoPath: photoPath.value, type: type.value, abv: abv.value, price: price.value, description: description.value, id: v4() });
     name.value = "";
     photoPath.value = "";
     type.value = "";
     abv.value = "";
+    price.value = "";
     description.value = "";
   }
   return (
@@ -49,6 +51,12 @@ function NewBeerForm(props) {
           id='abv'
           placeholder='ABV'
           ref={(input) => { abv = input; }} />
+        <input
+          style={inputStyle}
+          type='text'
+          id='price'
+          placeholder='Price'
+          ref={(input) => { price = input; }} />
         <textarea
           style={inputStyle}
           id='description'

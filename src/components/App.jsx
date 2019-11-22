@@ -5,7 +5,7 @@ import BeerList from "./BeerList";
 import NewBeerForm from "./NewBeerForm";
 import { Switch, Route } from "react-router-dom";
 import Error404 from "./Error404";
-import MasterBeerList from "./MasterBeerList"
+import MasterBeerList from "./MasterBeerList";
 
 class App extends React.Component {
   constructor(props){
@@ -26,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-      {console.log(this.state.masterBeerList)}
+        {console.log(this.state.masterBeerList)}
         <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
