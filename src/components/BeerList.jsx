@@ -4,7 +4,6 @@ import Beer from "./Beers";
 function BeerList(props) {
   return (
     <div>
-      {console.log(props)}
       {props.masterBeerList.map((beer, index) =>
         <Beer name={beer.name}
           photo={beer.photo}
