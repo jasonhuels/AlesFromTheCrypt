@@ -30,7 +30,7 @@ function Beer(props) {
   };
 
   function handleSubtractPint() {
-    console.log(props.index)
+    console.log(props)
     props.onSubtractPint(props.id);
   }
 
