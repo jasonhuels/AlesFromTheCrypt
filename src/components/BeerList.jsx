@@ -10,13 +10,16 @@ function BeerList(props) {
   //props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft);
   return (
     <div>
-      <select>
-        <option value="grapefruit">Grapefruit</option>
-        <option value="lime">Lime</option>
-        <option selected value="coconut">Coconut</option>
-        <option value="mango">Mango</option>
-      </select>
-      <button>Sort</button>
+      <form>
+
+        <select>
+          <option value="grapefruit">Grapefruit</option>
+          <option value="lime">Lime</option>
+          <option value="coconut">Coconut</option>
+          <option value="mango">Mango</option>
+        </select>
+        <button>Sort</button>
+      </form>
       {props.masterBeerList.map((beer, index) =>
         <Beer name={beer.name}
           photo={beer.photo}
