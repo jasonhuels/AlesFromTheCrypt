@@ -15,12 +15,18 @@ class App extends React.Component {
       masterBeerList: MasterBeerList
     };
     this.handleAddNewBeer = this.handleAddNewBeer.bind(this);
+    this.handleSubtractPint = this.handleSubtractPint.bind(this);
   }
 
   handleAddNewBeer(newBeer) {
-    console.log(this.state);
     let temp = this.state.masterBeerList.slice();
     temp.push(newBeer);
+    this.setState({ masterBeerList: temp });
+  }
+
+  handleSubtractPint(id) {
+    let temp = this.state.masterBeerList.slice();
+    temp[id].pintsLeft--;
     this.setState({ masterBeerList: temp });
   }
 
@@ -31,7 +37,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path="/beers" render={() => <BeerList masterBeerList={this.state.masterBeerList} />} />
-          <Route path="/employee" render={(props) => <Employee masterBeerList={this.state.masterBeerList} currentRouterPath={props.location.pathname} />} />
+          <Route path="/employee" render={(props) => <Employee masterBeerList={this.state.masterBeerList} currentRouterPath={props.location.pathname} onSubtractPint={this.handleSubtractPint}/>} />
           <Route path="/newbeer" render={() => <NewBeerForm onAddNewBeer={this.handleAddNewBeer} />} />
           <Route component={Error404} />
   

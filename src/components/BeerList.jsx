@@ -7,14 +7,14 @@ function BeerList(props) {
       {props.masterBeerList.map((beer, index) =>
         <Beer name={beer.name}
           photo={beer.photo}
-          quote={beer.quote}
           style={beer.style}
           abv={beer.abv}
           price={beer.price}
           description={beer.description}
           pintsLeft={beer.pintsLeft}
           key={index} 
-          currentRouterPath={props.currentRouterPath}/>
+          currentRouterPath={props.currentRouterPath}
+          onSubtractPint={props.onSubtractPint}/>
       )}
     </div>
   );

@@ -29,7 +29,12 @@ function Beer(props) {
     margin: "10px",
   };
 
-  let subButton = props.currentRouterPath === "/employee" ? <button onClick={() => { console.log("click works") }}>Subtract Pint</button> : "";
+  function handleSubtractPint() {
+    console.log(props.index)
+    props.onSubtractPint(props.id);
+  }
+
+  let subButton = props.currentRouterPath === "/employee" ? <button onClick={handleSubtractPint}>Subtract Pint</button> : "";
   let pintsLeft = props.currentRouterPath === "/employee" ? <p>Pints Left:{props.pintsLeft}</p> : "";
   const beerInfo = <div  className="">
     <div style={galleryStyle} className="">
@@ -46,7 +51,6 @@ function Beer(props) {
   </div>;
 
   if (props.currentRouterPath === "/employee") {
-    subButton = <button onClick={() => { console.log("click works") }}>Subtract Pint</button>;
     return (
       <div style={contentStyle} >
         {beerInfo} <br/>
