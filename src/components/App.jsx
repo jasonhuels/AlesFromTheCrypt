@@ -26,7 +26,12 @@ class App extends React.Component {
 
   handleSubtractPint(id) {
     let temp = this.state.masterBeerList.slice();
-    temp[id].pintsLeft--;
+    for(let i=0; i<temp.length; i++) {
+      if(temp[i].id === id){
+        temp[i].pintsLeft--;
+      }
+    }
+
     this.setState({ masterBeerList: temp });
   }
 
