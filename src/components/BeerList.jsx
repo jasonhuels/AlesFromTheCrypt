@@ -2,24 +2,10 @@ import React from "react";
 import Beer from "./Beers";
 
 function BeerList(props) {
-  const sortBy = {
-    PINTSLEFT_ASC: props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft),
-    PINTSLEFT_DESC: props.masterBeerList.sort((a, b) => b.pintsLeft - a.pintsLeft),
-
-  };
-  //props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft);
+  props.masterBeerList.sort((a, b) => a.price - b.price);
   return (
     <div>
-      <form>
-
-        <select>
-          <option value="grapefruit">Grapefruit</option>
-          <option value="lime">Lime</option>
-          <option value="coconut">Coconut</option>
-          <option value="mango">Mango</option>
-        </select>
-        <button>Sort</button>
-      </form>
+      <button onClick={()=>{}} >Price</button>
       {props.masterBeerList.map((beer, index) =>
         <Beer name={beer.name}
           photo={beer.photo}
