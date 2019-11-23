@@ -31,7 +31,6 @@ class BeerList extends React.Component {
 
     return (
       <div>
-        {console.log(this.props.onEditBeer)}
           <h5 style={{ color: "#d217ec", textAlign: "center"}}>Sort by:</h5>
         <div style={sortButtonBar}>
           <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.price - b.price))}}>Ascending Price</button>

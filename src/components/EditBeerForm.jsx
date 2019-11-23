@@ -23,7 +23,7 @@ function EditBeerForm(props) {
     abv.value = "";
     price.value = "";
     description.value = "";
-    modal.style.display = "none";
+    props.modal.style.display = "none";
   }
   return (
     <div >
