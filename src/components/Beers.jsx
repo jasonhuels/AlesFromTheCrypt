@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import EditBeerForm from "./EditBeerForm";
 
 function Beer(props) {
+  {console.log(props.onEditBeer)}
   var imageStyle = {
     maxwidth: "200px",
     maxHeight: "200px",
@@ -19,6 +21,27 @@ function Beer(props) {
     padding: "0",
     border: "solid 2px #d217ec"
   };
+
+  var modalStyle = {
+    display: "none",
+    position: "fixed",
+    zIndex: "1",
+    paddingTop: "100px",
+    paddingLeft: "100px",
+    left: "0",
+    top: "0",
+    overflow: "auto", 
+    backgroundColor: "rgb(0, 0, 0)",
+    backgroundColor: "rgba(0, 0, 0, 0.4)"
+  };
+
+  var modalContentStyle = {
+    backgroundColor: "#fefefe",
+    margin: "auto",
+    padding: "20px",
+    border: "1px solid #888",
+    width: "80 %",
+  };
   var galleryStyle = {
     
   };
@@ -33,8 +56,18 @@ function Beer(props) {
     props.onSubtractPint(props.id);
   }
 
+  function handleEditBeer() {
+    props.onEditBeer(props.id);
+  }
+
+  function showEditBeerForm() {
+    document.getElementById("editModal").style.display = "block";
+  }
+
   let subButton = props.currentRouterPath === "/employee" ? <button onClick={handleSubtractPint}>Subtract Pint</button> : "";
   let pintsLeft = props.currentRouterPath === "/employee" ? <p>Pints Left:{props.pintsLeft}</p> : "";
+  let editButton = props.currentRouterPath === "/employee" ? <button onClick={showEditBeerForm}>Edit Beer Info</button> : "";
+
   const beerInfo = <div  className="">
     <div style={galleryStyle} className="">
       <div style={beerStyle} className="col s3 card">
@@ -45,14 +78,37 @@ function Beer(props) {
         <h5>{props.description}</h5>
         {pintsLeft}
         {subButton}
+        {editButton}
       </div>
     </div>
   </div>;
+  window.onclick = function (event) {
+    if (event.target == document.getElementById("editModal")) {
+      document.getElementById("editModal").style.display = "none";
+    }
+  }
+
+
 
   if (props.currentRouterPath === "/employee") {
     return (
       <div style={contentStyle} >
         {beerInfo} <br/>
+        <div id="editModal" style={modalStyle}>
+          <div class="modal-content">
+            {<EditBeerForm name={props.name}
+              photo={props.photo}
+              style={props.style}
+              abv={props.abv}
+              price={props.price}
+              description={props.description}
+              pintsLeft={props.pintsLeft}
+              key={props.id}
+              id={props.id}
+              onEditBeer={props.onEditBeer}
+              modal={document.getElementById("editModal")} />}
+          </div>
+        </div>
         
       </div>
     );

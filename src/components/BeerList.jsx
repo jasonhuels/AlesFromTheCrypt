@@ -31,6 +31,7 @@ class BeerList extends React.Component {
 
     return (
       <div>
+        {console.log(this.props.onEditBeer)}
           <h5 style={{ color: "#d217ec", textAlign: "center"}}>Sort by:</h5>
         <div style={sortButtonBar}>
           <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.price - b.price))}}>Ascending Price</button>
@@ -49,7 +50,7 @@ class BeerList extends React.Component {
             id={beer.id}
             currentRouterPath={this.props.currentRouterPath}
             onSubtractPint={this.props.onSubtractPint}
-            onEditBeer={props.onEditBeer}/>
+            onEditBeer={this.props.onEditBeer}/>
         )}
       </div>
     );
