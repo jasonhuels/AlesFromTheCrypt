@@ -1,5 +1,6 @@
 import React from "react";
 import Beer from "./Beers";
+import PropTypes from "prop-types";
 
 class BeerList extends React.Component {
   constructor(props){
@@ -31,11 +32,11 @@ class BeerList extends React.Component {
 
     return (
       <div>
-          <h5 style={{ color: "#d217ec", textAlign: "center"}}>Sort by:</h5>
+        <h5 style={{ color: "#d217ec", textAlign: "center"}}>Sort by:</h5>
         <div style={sortButtonBar}>
-          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.price - b.price))}}>Ascending Price</button>
-          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => b.price - a.price)) }}>Descending Price</button>
-          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft)) }}>Pints Remaining</button>
+          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.price - b.price));}}>Ascending Price</button>
+          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => b.price - a.price)); }}>Descending Price</button>
+          <button style={sortButton} onClick={() => { this.handleChangeSortOrder(this.props.masterBeerList.sort((a, b) => a.pintsLeft - b.pintsLeft)); }}>Pints Remaining</button>
         </div><br/>
         {this.props.masterBeerList.map((beer, index) =>
           <Beer name={beer.name}
@@ -55,5 +56,12 @@ class BeerList extends React.Component {
     );
   }
 }
+
+BeerList.propTypes = {
+  masterBeerList: PropTypes.array,
+  currentRouterPath: PropTypes.string,
+  onSubtractPint: PropTypes.func,
+  onEditBeer: PropTypes.func
+};
 
 export default BeerList;

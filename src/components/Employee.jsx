@@ -15,7 +15,10 @@ function Employee(props){
 }
 
 Employee.propTypes = {
-  beetList: PropTypes.array,
+  masterBeerList: PropTypes.array,
+  currentRouterPath: PropTypes.string,
+  onSubtractPint: PropTypes.func,
+  onEditBeer: PropTypes.func
 };
 
 export default Employee;

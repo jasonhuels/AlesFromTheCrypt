@@ -70,7 +70,13 @@ function EditBeerForm(props) {
 }
 
 EditBeerForm.propTypes = {
-  onAddNewBeer: PropTypes.func
+  name: PropTypes.string,
+  photo: PropTypes.string,
+  style: PropTypes.string,
+  abv: PropTypes.string,
+  price: PropTypes.string,
+  description: PropTypes.string,
+  onEditBeer: PropTypes.func
 };
 
 export default EditBeerForm;

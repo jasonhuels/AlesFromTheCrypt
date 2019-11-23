@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import EditBeerForm from "./EditBeerForm";
 
 function Beer(props) {
-  let modalContent ='';
+  let modalContent ="";
   var imageStyle = {
     maxwidth: "200px",
     maxHeight: "200px",
@@ -31,7 +31,6 @@ function Beer(props) {
     left: "0",
     top: "0",
     overflow: "auto", 
-    backgroundColor: "rgb(0, 0, 0)",
     backgroundColor: "rgba(0, 0, 0, 0.4)"
   };
 
@@ -62,18 +61,18 @@ function Beer(props) {
 
   function showEditBeerForm() {
     document.getElementById("editModal").style.display = "block";
-    console.log(props.id)
+    console.log(props.id);
     modalContent = < EditBeerForm name = { props.name }
-    photo = { props.photo }
-    style = { props.style }
-    abv = { props.abv }
-    price = { props.price }
-    description = { props.description }
-    pintsLeft = { props.pintsLeft }
-    key = { props.id }
-    id = { props.id }
-    onEditBeer = { props.onEditBeer }
-    modal = { document.getElementById("editModal") } />;
+      photo = { props.photo }
+      style = { props.style }
+      abv = { props.abv }
+      price = { props.price }
+      description = { props.description }
+      pintsLeft = { props.pintsLeft }
+      key = { props.id }
+      id = { props.id }
+      onEditBeer = { props.onEditBeer }
+      modal = { document.getElementById("editModal") } />;
   }
 
   let subButton = props.currentRouterPath === "/employee" ? <button onClick={handleSubtractPint}>Subtract Pint</button> : "";
@@ -90,7 +89,7 @@ function Beer(props) {
         <h5>{props.description}</h5>
         {pintsLeft}
         {subButton}
-        {editButton}
+        {/* {editButton} */}
       </div>
     </div>
   </div>;
@@ -98,7 +97,7 @@ function Beer(props) {
     if (event.target == document.getElementById("editModal")) {
       document.getElementById("editModal").style.display = "none";
     }
-  }
+  };
 
 
 
